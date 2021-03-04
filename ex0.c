@@ -14,9 +14,10 @@ void main() {
     double eps = .0001;
 
     double x_n = 0, x_n_1 = 1, f_x_n, f_x_n_1, x_np1 = 1.;
-
+    int k=1;
     unsigned i = 0;
-
+    int w;
+    for(w=0;w<k;w++){
     while (fabs(f(x_np1)) >= eps) {
         f_x_n = f(x_n);
         f_x_n_1 = f(x_n_1);
@@ -25,6 +26,8 @@ void main() {
         x_n = x_np1;
         i++;
     }
-
+    x_n=x_n_1;
+    scanf("%lf",&x_n_1);
+    }
     printf("x_np1=%lf\ti=%d\n", x_np1, i);
 }
